@@ -10,7 +10,8 @@ def download():
         # Extract the audio file
         video = youtube.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
         # Download the file
-        video.download('C:/Users/liudi/Videos')        
+            #Sample for Windows. Enter your destination path or delete path to save file in current folder.
+        video.download('C:/Users/#enter username#/Videos')        
         # Display successful
         notif.config(fg="green", text=youtube.title + " download completed")
     except Exception as error:
