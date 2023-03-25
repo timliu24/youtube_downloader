@@ -11,7 +11,7 @@ def download():
         video = youtube.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
         # Download the file
             #Sample for Windows. Enter your destination path or delete path to save file in current folder.
-        video.download('C:/Users/#enter username#/Videos')        
+        video.download('C:/Users/# enter your username #/Videos')        
         # Display successful
         notif.config(fg="green", text=youtube.title + " download completed")
     except Exception as error:
@@ -27,6 +27,7 @@ Label(root, text="Youtube Video Downloader", fg="blue", font=("Arial", 18)).grid
 Label(root, text="Enter or paste the link of the video below:", font=("Arial", 16)).grid(sticky=N, row=1, pady=10)
 notif = Label(root, font=("Arial", 16))
 notif.grid(sticky=N, pady=10, row=4)
+Label(root, text="Disclaimer: This App is for education purpose only. We do not support or promote piracy in any way, and discourage unlawful downloading of copyright-protected content.", fg="red", font=("Arial", 8)).grid(sticky=N, padx=20, pady=10, row=4)
 # Vars
 url = StringVar()
 # Entry line
@@ -34,3 +35,4 @@ Entry(root, width=60, textvariable=url).grid(sticky=N, pady=10, row=2)
 # Button
 Button(root, width=25, text="Download", font=("Arial", 16), command=download).grid(sticky=N, row=3, pady=15)
 root.mainloop()
+
