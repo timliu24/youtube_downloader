@@ -1,3 +1,3 @@
 # youtube_downloader
 
-Python application to download youtube video.
+Python application to download youtube video and music.
