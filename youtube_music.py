@@ -9,19 +9,19 @@ def download():
         # URL input from user
         youtube = pytube.YouTube(video_url)
         # Extract the audio file
-
+        video = youtube.streams.filter(only_audio=True).first()
         # Download the file
-
+        out_file = video.download('C:/Users/# enter your username #/Music')
         # Convert the file to mp3 format
-
-
-
+        base, ext = os.path.splitext(out_file)
+        new_file = base + '.mp3'
+        os.rename(out_file, new_file)
         # Display successful
         notif.config(fg="green", text=youtube.title + " download completed")
     except Exception as e:
         print(e)
         # Display error
-
+        notif.config(fg="red", text="Music could not be downloaded")
 
 # Main GUI
 root = Tk()
