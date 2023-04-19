@@ -25,9 +25,9 @@ def download():
 
 # Main GUI
 root = Tk()
-root.title("")
+root.title("Youtube Music Downloader")
 # Labels
-Label(root, text="", fg="teal", font=("Arial", 18)).grid(sticky=N, padx=100, pady=10, row=0)
+Label(root, text="Youtube Music Downloader", fg="teal", font=("Arial", 18)).grid(sticky=N, padx=100, pady=10, row=0)
 Label(root, text="Enter or paste the link of the video below:", font=("Arial", 16)).grid(sticky=N, row=1, pady=10)
 notif = Label(root, font=("Arial", 16))
 notif.grid(sticky=N, pady=10, row=4)
