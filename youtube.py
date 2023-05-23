@@ -14,7 +14,7 @@ def download_video():
             #Sample for Windows. Enter your destination path or delete path to save file in current folder.
         video.download('C:/Users/# enter your username #/Videos')        
         # Display successful
-        notif.config(fg="green", text=youtube.title + " download completed")
+        notif.config(fg="green", text=youtube.title + " video download completed")
     except Exception as error:
         print(error)
         # Display error
@@ -35,7 +35,7 @@ def download_music():
         new_file = base + '.mp3'
         os.rename(out_file, new_file)
         # Display successful
-        notif.config(fg="green", text=youtube.title + " download completed")
+        notif.config(fg="green", text=youtube.title + " music download completed")
     except Exception as e:
         print(e)
         # Display error
@@ -55,7 +55,6 @@ url = StringVar()
 # Entry line
 Entry(root, width=60, textvariable=url).grid(sticky=N, pady=10, row=2)
 # Button
-Button(root, width=25, text="Download Video", font=("Arial", 16), command=download_video).grid(sticky=N, row=4, pady=10)
-root.mainloop()
-Button(root, width=25, text="Download Music", font=("Arial", 16), command=download_music).grid(sticky=N, row=5, pady=10)
+Button(root, width=25, text="Download Video", font=("Arial", 16), command=download_video).grid(sticky=N, row=4, pady=15)
+Button(root, width=25, text="Download Music", font=("Arial", 16), command=download_music).grid(sticky=N, row=5, pady=15)
 root.mainloop()
