@@ -20,7 +20,6 @@ def download_video():
         # Display error
         notif.config(fg="red", text="Video could not be downloaded")
 
-# Functions
 def download_music():
     video_url = url.get()
     try:
@@ -35,7 +34,7 @@ def download_music():
         new_file = base + '.mp3'
         os.rename(out_file, new_file)
         # Display successful
-        notif.config(fg="green", text=youtube.title + " music download completed")
+        notif.config(fg="purple", text=youtube.title + " music download completed")
     except Exception as e:
         print(e)
         # Display error
