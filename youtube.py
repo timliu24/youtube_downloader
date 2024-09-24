@@ -1,5 +1,5 @@
 from tkinter import *
-import pytube
+from pytubefix import YouTube
 import os
 
 # Functions
@@ -7,7 +7,7 @@ def download_video():
     video_url = url.get()
     try:
         # URL input from user
-        youtube = pytube.YouTube(video_url)
+        youtube = YouTube(video_url)
         # Extract the audio file
         video = youtube.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
         # Download the file
@@ -24,7 +24,7 @@ def download_music():
     video_url = url.get()
     try:
         # URL input from user
-        youtube = pytube.YouTube(video_url)
+        youtube = YouTube(video_url)
         # Extract the audio file
         video = youtube.streams.filter(only_audio=True).first()
         # Download the file
